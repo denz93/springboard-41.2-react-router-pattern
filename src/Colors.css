@@ -1,0 +1,28 @@
+.color-header {
+  padding: 2em 2em;
+  text-align: center;
+  background-color: #2a2a2c;
+  color:aliceblue;
+}
+
+.btn {
+  padding: .3em .5em;
+  border: 1px solid #6c6ca9;
+  transition: outline-width .1s ease-in, outline-offset .4s ease-in;
+  outline-offset: -2px;
+  
+}
+
+.btn:hover {
+  outline: 2px solid #6c6ca9;
+  outline-offset: -4px;
+}
+
+.colors ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  padding: 0;
+}

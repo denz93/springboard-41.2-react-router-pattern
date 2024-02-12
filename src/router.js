@@ -1,8 +1,12 @@
-import { createBrowserRouter, RouterProvider, redirect } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import DogList from "./DogList";
 import DogDetail from "./DogDetail";
+import Colors from "./Colors";
 import db from './db.json'
+import ColorsNew from "./ColorsNew";
+import Color from "./Color";
+import { getKey } from "./hooks";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -11,7 +15,6 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dogs",
-        index: true,
         element: <DogList/>,
         async loader() {
           return db.dogs
@@ -22,6 +25,23 @@ const router = createBrowserRouter([
         element: <DogDetail/>,
         async loader({params}) {
           return db.dogs.find(dog => dog.name.toLowerCase() === params.name.toLowerCase()) ?? null
+        }
+      },
+      {
+        path: "/colors",
+        element: <Colors/>
+      },
+      {
+        path: "/colors/new",
+        element: <ColorsNew/>
+      },
+      {
+        path: "/colors/:color",
+        element: <Color/>,
+        async loader({params, request}) {
+          const colors = getKey('colors')
+          if (!colors) return request.redirect('/colors')
+          return colors.find(color => color.name.toLowerCase() === params.color.toLowerCase())
         }
       }
     ]

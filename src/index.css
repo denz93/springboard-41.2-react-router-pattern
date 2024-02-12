@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+a:focus-visible {
+  outline: 1px dotted #3c3c3d;
+}
