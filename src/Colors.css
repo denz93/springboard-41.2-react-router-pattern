@@ -8,9 +8,9 @@
 .btn {
   padding: .3em .5em;
   border: 1px solid #6c6ca9;
-  transition: outline-width .1s ease-in, outline-offset .4s ease-in;
+  transition: outline-width .05s ease-in, outline-offset .1s ease-in;
   outline-offset: -2px;
-  
+  background-color: transparent;
 }
 
 .btn:hover {

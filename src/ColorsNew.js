@@ -1,12 +1,13 @@
 import {useState} from 'react';
 import { useColorsContext } from './hooks';
 import {useNavigate} from 'react-router-dom'
+import './ColorsNew.css'
 export default function ColorsNew() {
   const [colors, setColors] = useColorsContext()
   const [colorName, setColorName] = useState()
   const [colorValue, setColorValue] = useState('#000000')
   const navigate = useNavigate()
-  return <section>
+  return <section className="colors-new">
     <form onSubmit={(e) => {
       e.preventDefault()
       const isValid = e.currentTarget.reportValidity()
@@ -22,7 +23,7 @@ export default function ColorsNew() {
         <label>Color value</label>
         <input required minLength={1} type="color" value={colorValue} onChange={(e) => setColorValue(e.target.value)}/>
       </div>
-      <button type='submit'>Add this color</button>
+      <button type='submit' className='btn'>Add this color</button>
     </form>
   </section>
 }

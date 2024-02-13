@@ -1,0 +1,42 @@
+.colors-new {
+  min-height: 100svh;
+  padding-top: 5em;
+  background: rgb(147,117,22);
+  background: linear-gradient(90deg, rgba(147,117,22,1) 0%, rgba(158,71,31,1) 10%, rgba(52,149,31,1) 30%, rgba(61,102,179,1) 60%, rgba(184,13,35,1) 100%);
+}
+
+.colors-new form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.colors-new .form-control {
+  display: flex;
+  /* gap: 1em; */
+  min-width: 400px;
+}
+
+.colors-new .form-control label {
+  flex: 1;
+  text-align: left;
+}
+
+input {
+  background-color: transparent;
+  border: 1px solid #9797de;
+}
+input:focus-within {
+  outline: 1px solid #9797de;
+}
+.colors-new .btn {
+  border-color: #9797de;
+  color: aliceblue;
+}
+
+.colors-new .btn:hover {
+  outline-color: #9797de;
+
+}

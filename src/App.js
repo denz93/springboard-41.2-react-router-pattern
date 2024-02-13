@@ -1,18 +1,22 @@
 import './App.css';
-import {Outlet, NavLink, useNavigate} from 'react-router-dom';
+import {Outlet, NavLink, useNavigate, useLocation} from 'react-router-dom';
 import {useEffect} from 'react';
 import { useColorsContext, useColors } from './hooks';
 export default function App() {
   const colorContext = useColors()
   const navigate = useNavigate()
+  const location = useLocation()
   useEffect(() => {
-    console.log('app effect')
-    navigate('/dogs')
-  }, [navigate])
+    console.log({location})
+    if (location.pathname === '/') {
+
+      navigate('/dogs', {})
+    }
+  }, [navigate, location.pathname])
   return (
       <div className="App">
         <nav>
-          <NavLink aria-expanded  to={'/dogs'}>List of Dogs</NavLink>
+          <NavLink  to={'/dogs'}>List of Dogs</NavLink>
           <NavLink to={'/colors'}>Colors</NavLink>
           <NavLink to={'/dogs/whiskey'}>Whiskey</NavLink>
           <NavLink to={'/dogs/duke'}>Duke</NavLink>
